@@ -15,22 +15,23 @@ html {
  */
 
 body {
-  margin: 140px 0 0 0;
+  margin: 80px 0 0 0;
   color: #244751;
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-body main {
+.container {
   margin: 0 auto;
   width: 450px;
   align-content: center;
-  height: 500px;
-  background-color: white;
+  padding:40px 20px 100px 20px;
+  background-color: #fff;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 
 .user-avatar {
    border-radius: 50%
