@@ -1,0 +1,66 @@
+.tweet-list {
+  margin-top: 60px;
+  /*padding: .5em 1em 1em 1em;*/
+  position: relative;
+  border: 1px solid black;
+}
+
+
+
+
+
+
+section .tweet-header {
+  width: 100%;
+  background-color: #eee;
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  margin: .5em 0.5em .5em .5em;
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+#tweet-name {
+  margin: .5em 0.5em .5em 0;
+  display: inline-block;
+  margin
+}
+
+#tweet-handle {
+  margin: .5em 0 .5em 0;
+  position: absolute;
+  right: 0;
+  align-content: right;
+  padding-right: 15px;
+}
+
+.tweet-text {
+  padding: ;
+  height: 100px;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+}
+
+.tweet-footer {
+  border-top:1px solid #eee;
+  height: 40px;
+}
+
+.days-passed {
+  font-size: .7em;
+}
+
+.tweet-actions {
+  display:none;
+}
+
+.tweet-list:hover .tweet-actions {
+  display: inline-block;
+  float:right;
+}

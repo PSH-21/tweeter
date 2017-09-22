@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -43,7 +44,29 @@
           <span class="counter">140</span>
         </form>
       </section>
+
+        <section class="tweet-list">
+          <header class="tweet-header">
+            <img class="avatar" src="/images/avatar.png"}>
+            <h2 id="tweet-name">Name</h2>
+            <h6 id="tweet-handle">@Handle</h6>
+          </header>
+          <div class="tweet-text">
+          <p>Text Area </p>
+          </div>
+          <footer class="tweet-footer">
+            <span class="days-passed">Days ago created</span>
+            <div class="tweet-actions">
+              <img src="/images/flag.png">
+              <img src="/images/retweet.png">
+              <img src="/images/like.png">
+            </div>
+          </footer>
+        </section>
+
     </main>
 
+
   </body>
+
 </html>
