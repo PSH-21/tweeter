@@ -17,7 +17,7 @@ var data = [
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "<script>alert('uh oh!');</script>",//"Descartes",
       "avatars": {
         "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
@@ -46,6 +46,13 @@ var data = [
   }
 ];
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+
+  return div.innerHTML;
+}
+
 function renderTweets(tweets) {
   // loops through tweets
     // calls createTweetElement for each tweet
@@ -53,11 +60,12 @@ function renderTweets(tweets) {
     for (let i = 0; i < tweets.length; i++) {
       let $tweet = createTweetElement(tweets[i]);
       $('.container').append($tweet);
+
     }
 }
 
 function createTweetElement(tweet) {
-     let doc = (`<article class='tweet-list'>
+     let doc = `<article class='tweet-list'>
           <header class="tweet-header">
             <img class="avatar" src="${tweet.user.avatars.small}">
             <h2 id="tweet-name">${tweet.user.name}</h2>
@@ -74,10 +82,34 @@ function createTweetElement(tweet) {
               <img src="/images/like.png">
             </div>
           </footer>
-        </article>`);
-     return doc;
+        </article>`;
+      var safeHtml = `${escape(doc)}`;
+
+
+
+      safeHtml = safeHtml.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+      // console.log("replace ",safeHtml);
+      return safeHtml;
+     // console.log(doc);
+     // return doc;
 }
 
+function loadTweets() {
+  let $list = $('.tweet-list');
+  $(function() {
+    console.log('Performing ajax call...');
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function () {
+        console.log('Success: ', renderTweets(data));
+      }
+    });
+  });
+}
+
+
+
 $(document).ready(function() {
-  renderTweets(data);
+  loadTweets();
 });
