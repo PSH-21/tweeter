@@ -10,7 +10,7 @@
 
 
 
-section .tweet-header {
+article .tweet-header {
   width: 100%;
   background-color: #eee;
   position: relative;
