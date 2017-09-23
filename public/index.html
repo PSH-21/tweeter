@@ -72,16 +72,28 @@
   </body>
 
 <script>
-$( "form" ).on("submit", function( event ) {
-  event.preventDefault();
-  console.log( $( this ).serialize() );
-  // function showValues() {
-  //   var str = $( "form" ).serialize();
-  //   $( "#results" ).text( str );
-  // }
-  // $( "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
-  // $( "select" ).on( "change", showValues );
-  // showValues();
+$(document).ready(function() {
+  $("#tweet-button").on('click', function(event) {
+    event.preventDefault();
+    let $tweetLength = $('#tweet-form').val().length;
+    if ($tweetLength > 140) {
+      alert('Tweet must be no more than 140 characters');
+      return;
+    } else if ($tweetLength === 0) {
+      alert('Tweet cannot be blank');
+      return;
+    } else
+    console.log($tweetLength);
+    // $('#tweet-form'
+    //console.log( $( this ).serialize() );
+    // function showValues() {
+    //   var str = $( "form" ).serialize();
+    //   $( "#results" ).text( str );
+    // }
+    // $( "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
+    // $( "select" ).on( "change", showValues );
+    // showValues();
+  });
 });
 </script>
 </html>
