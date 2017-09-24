@@ -114,6 +114,12 @@ function loadTweets() {
 
 $(document).ready(function() {
   loadTweets();
+
+  $(".post-button").on('click', function(event) {
+    $(".new-tweet").slideToggle();
+    $("#tweet-form").focus();
+  });
+
   $("#tweet-button").on('click', function(event) {
     event.preventDefault();
     let $tweetLength = $('#tweet-form').val().length;

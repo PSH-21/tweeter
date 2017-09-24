@@ -23,6 +23,15 @@ nav {
   font-size: 2em;
 }
 
+#nav-bar .links{
+  position: absolute;
+  top:10px;
+  right: 20px;
+  align-content: right;
+  padding-right: 15px;
+}
+
+
 
 
 /*#navbar {
