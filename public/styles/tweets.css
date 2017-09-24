@@ -1,6 +1,11 @@
+.tweets {
+  padding-top: 10px;
+  padding-bottom:10px;
+}
+
 .tweet-list {
-  margin-top: 60px;
   /*padding: .5em 1em 1em 1em;*/
+  margin-top: 60px;
   position: relative;
   border: 1px solid black;
 }
