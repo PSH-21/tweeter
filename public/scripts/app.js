@@ -57,7 +57,7 @@ function renderTweets(tweets) {
   // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    for (let i = 0; i < tweets.length; i++) {
+    for (let i = tweets.length-1; i >= 0; i--) {
       let $tweet = createTweetElement(tweets[i]);
       $('.container').append($tweet);
 
@@ -113,4 +113,38 @@ function loadTweets() {
 
 $(document).ready(function() {
   loadTweets();
+  $("#tweet-button").on('click', function(event) {
+    event.preventDefault();
+    let $tweetLength = $('#tweet-form').val().length;
+    if ($tweetLength > 140) {
+      alert('Tweet must be no more than 140 characters');
+      return;
+    } else if ($tweetLength === 0) {
+      alert('Tweet cannot be blank');
+      return;
+    } else
+    var tweetText = $("form").serialize();
+    console.log(tweetText);
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: tweetText,
+      success: function () {
+        $(".container").empty();
+        console.log("Success");
+      }
+    });
+
+    loadTweets();
+
+    // $('#tweet-form'
+    //console.log( $( this ).serialize() );
+    // function showValues() {
+    //   var str = $( "form" ).serialize();
+    //   $( "#results" ).text( str );
+    // }
+    // $( "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
+    // $( "select" ).on( "change", showValues );
+    // showValues();
+  });
 });

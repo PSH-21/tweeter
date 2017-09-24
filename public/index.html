@@ -16,12 +16,13 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
-
+    <!-- <script type="text/javascript" src="/../server/lib/util/user-helper.js"</script> -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </head>
@@ -71,29 +72,4 @@
 
   </body>
 
-<script>
-$(document).ready(function() {
-  $("#tweet-button").on('click', function(event) {
-    event.preventDefault();
-    let $tweetLength = $('#tweet-form').val().length;
-    if ($tweetLength > 140) {
-      alert('Tweet must be no more than 140 characters');
-      return;
-    } else if ($tweetLength === 0) {
-      alert('Tweet cannot be blank');
-      return;
-    } else
-    console.log($tweetLength);
-    // $('#tweet-form'
-    //console.log( $( this ).serialize() );
-    // function showValues() {
-    //   var str = $( "form" ).serialize();
-    //   $( "#results" ).text( str );
-    // }
-    // $( "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
-    // $( "select" ).on( "change", showValues );
-    // showValues();
-  });
-});
-</script>
 </html>
