@@ -103,7 +103,7 @@ function loadTweets() {
       url: '/tweets',
       method: 'GET',
       success: function (tweets) {
-        console.log('Success')
+        console.log('Success');
         renderTweets(tweets);
       }
     });
@@ -131,7 +131,8 @@ $(document).ready(function() {
       return;
     } else
     var tweetText = $("form").serialize();
-    $("textarea").val('');
+    $('textarea').val('').focus();
+    $('.counter').text(140);
     $.ajax({
       url: '/tweets',
       method: 'POST',
