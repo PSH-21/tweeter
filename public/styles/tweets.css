@@ -39,12 +39,13 @@ article .tweet-header {
   margin: .5em 0 .5em 0;
   position: absolute;
   right: 0;
+  top: 1.25em;
   align-content: right;
   padding-right: 15px;
 }
 
 .tweet-text {
-  padding: ;
+  padding:.5em;
   height: 100px;
   display: flex;
   justify-content:center;
@@ -55,6 +56,7 @@ article .tweet-header {
 .tweet-footer {
   border-top:1px solid #eee;
   height: 40px;
+  padding:0 .25em 0 .25em;
 }
 
 .days-passed {
