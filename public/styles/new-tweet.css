@@ -4,6 +4,7 @@
   border-radius: 5px;
   border: 1px solid black;
   position: relative;
+  margin-bottom: 60px;
 }
 
 #tweet-form {

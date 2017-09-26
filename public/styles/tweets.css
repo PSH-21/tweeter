@@ -5,17 +5,13 @@
 
 .tweet-list {
   /*padding: .5em 1em 1em 1em;*/
-  margin-top: 60px;
+  margin-bottom: 60px;
   position: relative;
   border: 1px solid black;
 }
 
 
-
-
-
-
-article .tweet-header {
+.tweet-header {
   width: 100%;
   background-color: #eee;
   position: relative;
